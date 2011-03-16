@@ -12,8 +12,9 @@ Backbone.sync = function(method, model, success, error) {
   } else {
     Backbone._sync(method, model, success, error);
   }
-}
+};
 
+var TweetFilter = function(tweet) { return true; };
 
 var Tweet = Backbone.Model.extend({
 });
@@ -24,12 +25,12 @@ var Tweets = Backbone.Collection.extend({
 });
 
 var TweetTemplate = _.template(
-  "<div class='user span-12 last'><%= model.get('user').screen_name %></div>"+
-  "<div class='text span-12 last'><%= model.escape('text') %></div>"
+  "<div class='user span-4 '><%= model.get('user').screen_name %></div>"+
+  "<div class='text span-20 last'><%= model.escape('text') %></div>"
 );
 
 var TweetView = Backbone.View.extend({
-  className: 'tweet',
+  className: 'tweet span-24',
   initialize: function() {
     _.bindAll(this, 'render');
   },
@@ -45,7 +46,8 @@ var TweetList = new (Backbone.View.extend({
     _.bindAll(this, 'render');
   },
   render: function() {
-    Feed.each(function(tweet) {
+    $(this.el).html('');
+    _.each(Feed.select(TweetFilter), function(tweet) {
       $(this.el).append(
         (new TweetView({model: tweet})).render().el
       );
@@ -53,13 +55,39 @@ var TweetList = new (Backbone.View.extend({
   }
 }))();
 
+var FilterView = new (Backbone.View.extend({
+  el: '#filter',
+  events: {
+    'keyup input': 'filter'
+  },
+  initialize: function() {
+    _.bindAll(this, 'filter', 'render');
+  },
+  render: function() {
+    $(this.el).html(
+      "<div class='span-4'>Filter tweets by query</div>"+
+      "<div class='span-20 last'>"+
+        "<input type='text' />" +
+      "</div>"
+    );
+    this.delegateEvents(this.events);
+  },
+  filter: function() {
+    TweetFilter = function(tweet) {
+      return (tweet.escape('text').indexOf(this.$('input').val()) >= 0);
+    };
+    this.trigger('change:filter');
+  }
+}))();
+
+$(FilterView.render);
+
 var Feed = new Tweets();
-
 Feed.bind('refresh', TweetList.render);
-//Feed.bind('refresh', function() { TweetList.render()});
+FilterView.bind('change:filter', TweetList.render);
 
-
-$(function() {
+var Refresh = function() {
+  //setTimeout(Refresh, 60000);
   Feed.fetch();
-});
-
+};
+Refresh();
