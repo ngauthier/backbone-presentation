@@ -28,7 +28,7 @@ var Tweet = Backbone.Model.extend({});
 // Tweet collection for fetching tweets
 var Tweets = Backbone.Collection.extend({
   model: Tweet,
-  url: "http://api.twitter.com/1/statuses/public_timeline.json?count=100"
+  url: "http://api.twitter.com/1/statuses/public_timeline.json"
 });
 
 // Template for rendering tweets

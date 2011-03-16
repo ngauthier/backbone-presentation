@@ -8,7 +8,7 @@
 # What is Backbone?
 
 !SLIDE bullets
-# Size comparison (production minified)
+# Size comparison
 * Sproutcore: 65k (hello world only)
 * JQuery: 29kb
 * Underscore: 3kb
@@ -17,5 +17,4 @@
 !SLIDE
 # Backbone's Role
 ## The Underscore of MVC
-
 
