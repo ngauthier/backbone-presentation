@@ -359,4 +359,6 @@
 # Questions?
 ### [@ngauthier](http://twitter.com/ngauthier)
 ### [ngauthier@shortmail.com](mailto:ngauthier@shortmail.com)
+### [http://ngauthier-backbone.heroku.com](http://ngauthier-backbone.heroku.com)
+### [http://github.com/ngauthier/backbone-presentation](http://github.com/ngauthier/backbone-presentation)
 
