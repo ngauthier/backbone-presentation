@@ -16,12 +16,17 @@ Backbone.sync = function(method, model, success, error) {
 
 
 var Tweet = Backbone.Model.extend({
-
 });
+
 var Tweets = Backbone.Collection.extend({
   model: Tweet,
   url: "http://api.twitter.com/1/statuses/public_timeline.json"
 });
+
+var TweetTemplate = _.template(
+  "<div class='user span-12 last'><%= model.get('user').screen_name %></div>"+
+  "<div class='text span-12 last'><%= model.escape('text') %></div>"
+);
 
 var TweetView = Backbone.View.extend({
   className: 'tweet',
@@ -29,7 +34,7 @@ var TweetView = Backbone.View.extend({
     _.bindAll(this, 'render');
   },
   render: function() {
-    $(this.el).html(this.model.escape('text'));
+    $(this.el).html(TweetTemplate({model: this.model}));
     return this;
   }
 });

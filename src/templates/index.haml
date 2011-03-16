@@ -7,9 +7,9 @@
     %script{:src => "underscore-min.js", :type => "text/javascript"}
     %script{:src => "backbone-min.js", :type => "text/javascript"}
     %script{:src => "bitter.js", :type => "text/javascript"}
+    %link{:rel => "stylesheet", :href => "/blueprint/screen.css", :type => "text/css"}
+    %link{:rel => "stylesheet", :href => "/screen.css", :type => "text/css"}
   %body
-    %a{:href => '/logout'} Log out
-    %h1
-      Feed for 
-      = session[:name]
-    #tweets
+    .container
+      #tweets.span-12
+      #sidebar.span-12
