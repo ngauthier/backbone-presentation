@@ -12,17 +12,3 @@
 ### [http://ngauthier-backbone.heroku.com](http://ngauthier-backbone.heroku.com)
 ### [http://github.com/ngauthier/backbone-presentation](http://github.com/ngauthier/backbone-presentation)
 
-!SLIDE
-# What is Backbone?
-
-!SLIDE bullets
-# Size comparison
-* Sproutcore: 65k (hello world only)
-* JQuery: 29kb
-* Underscore: 3kb
-* Backbone: 4kb
-
-!SLIDE
-# Backbone's Role
-## The Underscore of MVC
-
