@@ -166,8 +166,9 @@
 * Find-as-you-type search
 * (that persists after refreshes)
 
-!SLIDE
+!SLIDE center
 # Demo
+![Demo](demo.jpg)
 
 !SLIDE
 # 82 lines of js
