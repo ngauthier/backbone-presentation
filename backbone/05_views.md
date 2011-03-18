@@ -5,7 +5,7 @@
 !SLIDE
 # Tweet View
     @@@ javascript
-    var TweetView = Backbone.View.extend({
+    Backbone.View.extend({
       className: 'tweet',
       initialize: function() {
         _.bindAll(this, 'render');
@@ -22,8 +22,17 @@
 # No templates in Backbone
 ### In the previous example, TweetTemplate was an underscore template
 
+!SLIDE 
+# View properties
+## className
+### name of css class (i.e. 'tweet')
+## el
+### existing element selector (i.e. '#tweets')
+## tagName
+### name of html tag (i.e. "li", "span")
+
 !SLIDE
-# View Events
+# View Event Listeners
 ### Receive information from the DOM
 
 !SLIDE
@@ -43,7 +52,7 @@
     });
 
 !SLIDE bullets
-# View Events
+# View Event Listeners
 * maintain scope
 * automatically remove and bind
 

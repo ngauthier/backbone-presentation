@@ -1,15 +1,15 @@
 !SLIDE
 # Controllers
-### Super high level
-### Routing and control flow
+## High level
+## Routing and control flow
 
 !SLIDE
 # Message Controller
     @@@ javascript
     Backbone.Controller.extend({
       routes: {
-        "": "index",
-        "from/:sender": "from",
+        "!/": "index",
+        "!/from/:sender": "from",
       },
       index: function() {
         MessageView.render();

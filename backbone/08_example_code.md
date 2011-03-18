@@ -2,6 +2,7 @@
 # Model
     @@@ javascript
     Tweet = Backbone.Model.extend({})
+### (no persistence)
 
 !SLIDE
 # Collection
@@ -23,6 +24,7 @@
       "<%= model.escape('text') %>"+
       "</div>"
     );
+### In a "real app" this would not be a string
 
 !SLIDE
 # Tweet View
@@ -139,9 +141,9 @@
 !SLIDE
 # Glue it together
     @@@ javascript
-    // Refresh every 60 seconds
+    // Refresh every 10 seconds
     var Refresh = function() {
-      setTimeout(Refresh, 60000);
+      setTimeout(Refresh, 10000);
       Feed.fetch();
     };
     Refresh();

@@ -116,9 +116,9 @@ Feed.bind('refresh', TweetList.render);
 // When the filter changes, render the list
 FilterView.bind('change:filter', TweetList.render);
 
-// Auto-refresh the feed every 60 seconds
+// Auto-refresh the feed every 10 seconds
 var Refresh = function() {
-  setTimeout(Refresh, 60000);
+  setTimeout(Refresh, 10000);
   Feed.fetch();
 };
 Refresh();

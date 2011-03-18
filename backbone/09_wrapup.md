@@ -25,10 +25,21 @@
 ### A lot of that is comments
 
 !SLIDE
-# To pull from twitter, I needed jsonp
+# To pull from twitter directly (no proxy), I needed jsonp
 
 !SLIDE
-# Easily overrode backbone's sync method
+# Overrode Backbone.sync
+    @@@ javascript
+    Backbone._sync=Backbone.sync;
+    Backbone.sync=function(/*params*/) {
+     if (/* call to twitter */) {
+      $.ajax({url: model.url,
+        contentType: 'application/json',
+        type: 'get', dataType: 'jsonp',
+        success: success, error: error
+       });
+     } else { Backbone._sync(/*params*/); }
+    };
 
 !SLIDE
 # Bonus!

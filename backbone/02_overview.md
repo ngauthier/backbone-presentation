@@ -20,7 +20,7 @@
 
 !SLIDE  center
 # Callbacks 
-## = you're doin' it wrong
+## = yer doin' it wrong
 ![BryanL](bryanl_eyyy.jpeg)
 
 !SLIDE bullets
