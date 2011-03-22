@@ -22,6 +22,13 @@
 # No templates in Backbone
 ### In the previous example, TweetTemplate was an underscore template
 
+!SLIDE bullets
+# Render Guidelines
+* Build up html
+* Populate the element
+* Don't attach the element to the DOM
+* Return 'this' for chaining
+
 !SLIDE 
 # View properties
 ## className
@@ -30,6 +37,10 @@
 ### existing element selector (i.e. '#tweets')
 ## tagName
 ### name of html tag (i.e. "li", "span")
+
+!SLIDE
+# el
+### If you don't specify an existing element, backbone will set el to an unattached dom node
 
 !SLIDE
 # View Event Listeners
@@ -48,7 +59,6 @@
       }
       // remainder of view code
       // initializer, render, etc
-    }
     });
 
 !SLIDE bullets

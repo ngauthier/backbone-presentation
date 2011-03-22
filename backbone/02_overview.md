@@ -3,10 +3,11 @@
 
 !SLIDE bullets
 # Size comparison
-* Sproutcore: 65k (hello world only)
+* Cappuccino hello world: 2.73MB / 334 reqs
+* Sproutcore hello world: 65k of js
 * JQuery: 29kb
-* Underscore: 3kb
-* Backbone: 4kb
+* Backbone: 3.9kb
+* Underscore: 3.3kb
 
 !SLIDE
 # Backbone's Role
@@ -24,7 +25,7 @@
 ![BryanL](bryanl_eyyy.jpeg)
 
 !SLIDE bullets
-# Backbone's MVCC
+# Backbone's MVC(C)
 * Models
 * Views
 * Controllers
