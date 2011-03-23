@@ -44,6 +44,13 @@
 !SLIDE
 # Bonus!
 
+!SLIDE 
+# Resources
+### jQuery @ [http://docs.jquery.com/](http://docs.jquery.com/)
+### Underscore @ [http://documentcloud.github.com/underscore/](http://documentcloud.github.com/underscore/)
+### Backbone @ [http://documentcloud.github.com/backbone/](http://documentcloud.github.com/backbone/)
+### Backbone source @ [http://documentcloud.github.com/backbone/backbone.js](http://documentcloud.github.com/backbone/backbone.js)
+
 !SLIDE
 # Questions?
 ### [@ngauthier](http://twitter.com/ngauthier)
